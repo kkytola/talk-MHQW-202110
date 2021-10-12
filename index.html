@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+    <title>boundady zig-zag</title>
+    <link rel="shortcut icon" href="./favicon.ico"/>
+    <link rel="stylesheet" href="./dist/reveal.css" />
+    <link rel="stylesheet" href="./dist/theme/solarized.css" id="theme" />
+    <link rel="stylesheet" href="./css/highlight/zenburn.css" />
+
+  </head>
+  <body>
+    <div class="reveal">
+      <div class="slides"><section  data-markdown><script type="text/template">
+
+## Boundary zig-zags 
+
+## of SLEs and interfaces
+
+Kalle Kytölä (Aalto University)
+
+*Mathematical Harmony and the Quantum World*
+
+October 14, 2021
+</script></section><section  data-markdown><script type="text/template">
+### The environment I grew up in
+
+![BB](sub/BB-papers.png)
+</script></section><section ><section data-markdown><script type="text/template">
+### Denis' & Michel's $\mathrm{SLE}_\kappa$ boundary-zig-zag
+
+
+![BB_cblock](sub/BB-zig_zag-bdry_zig_zag_question.png)
+
+<div id="left">
+
+![BB_cblock](sub/BB-zig_zag-illustration.png)
+
+</div>
+
+<div id="right">
+
+![BB_cblock](sub/BB-zig_zag-bdry_zig_zag_example_conformal_block.png) <!-- .element height="150%" width="150%" -->
+
+ * $c = c(\kappa) = 13-6(\frac{\kappa}{4}+\frac{4}{\kappa})$
+ * $|\omega \rangle$ with $h = h_{1;2}(\kappa) = \frac{6-\kappa}{2\kappa}$
+ * bdry-zig-zag $h_{1;3}(\kappa) = \frac{8-\kappa}{\kappa}$
+
+</div>
+
+</script></section><section data-markdown><script type="text/template">
+### Denis' & Michel's $\mathrm{SLE}_\kappa$ boundary-zig-zag
+
+
+![BB_cblock](sub/BB-zig_zag-philosophy.png)
+</script></section><section data-markdown><script type="text/template">
+### $\mathrm{SLE}_\kappa$ $N$-point boundary-zig-zag
+
+![BB_cblock](sub/PIC-SLE_bdry_zig.png)
+
+ * relabel $y^{-}_L < \cdots < y^{-}_1 < x < y^{+}_1 < \cdots < y^{+}_R$
+ * $\omega \in \\{+,-\\}^N$ encoding the order ($N=L+R$)
+ * proba $\sim \small{\varepsilon^{-N h_{1;3}} 
+   Q_\omega(y^{-}_L, \ldots, y^{-}_1; x; y^{+}_1, \ldots, y^{+}_R)}$
+
+</script></section><section data-markdown><script type="text/template">
+### BPZ PDEs, asymptotics, covariance
+
+**PDE:** $\hspace{.2cm} 2 \times $ 2nd order ($h_{1;2}$), $\hspace{.2cm} N \times $ 3rd order ($h_{1;3}$)
+
+**COV:**
+transl. invariant + homogeneous (deg$=-N h_{1;3}$)
+
+$$ \lim_{y_1^\pm \to x} |y_1^\pm - x|^{\frac{8-\kappa}{\kappa}} Q_\omega \propto \begin{cases} Q_{\hat{\omega}} & \text{first} \\\\ 0 & \text{else} \end{cases}$$
+
+$$ \lim_{y_{j+1}^\pm \to y_j^\pm} |y_{j+1}^\pm - y_j^\pm|^{\frac{8-\kappa}{\kappa}} Q_\omega \propto \begin{cases} Q_{\hat{\omega}_j} & \text{consecutive} \\\\ 0 & \text{else} \end{cases}$$
+
+</script></section></section><section ><section data-markdown><script type="text/template">
+### Approach via a hidden quantum group
+
+$U_q(\mathfrak{sl}_2)$ and its irreps $M_d$ of dimension $d$
+
+![contours](sub/contours_for_SCCGC-1.png) <!-- .element height="75%" width="75%" -->
+
+$$ \tiny{\int \\! \cdot \\! \cdot \\! \cdot \\! \int \prod_{i \ne j} (x_j-x_i)^{\frac{2}{\kappa}(d_i-1)(d_j-1)} 
+    \prod_{i,r} (w_r-x_i)^{\frac{-4}{\kappa}(d_i-1)}
+    \prod_{r \ne s} (w_s-w_r)^{\frac{8}{\kappa}} \prod \mathrm{d} w_r} $$
+</script></section><section data-markdown><script type="text/template">
+### Approach via a hidden quantum group
+
+<div id="thm">
+
+**"Theorem"** *(K. & Peltola: [arXiv:1408.1384](https://arxiv.org/abs/1408.1384))*
+$q = e^{i 4 \pi / \kappa}$, $\kappa \notin \mathbb{Q}$
+
+$$\mathcal{F} \colon \bigotimes_{i=1}^n M_{d_i} \to \\{ \text{functions of } x_1, \ldots, x_n \\}$$
+ * **COV:** $\mathcal{F}[v]$ is (i): translation inv., (ii) homog. if $K.v = q^{d} v$, (iii) ...
+ * **PDE:** if $E.v = 0$, then $\mathcal{F}[v]$ satisfies BPZ PDEs of $h_{1;d_i}$
+ * **ASY:** if $v \simeq \big( \mathrm{id}^{\otimes \\#} \otimes \pi_d \otimes \mathrm{id}^{\otimes \\#} \big) (v) = \hat{v}$
+     then $\small{\mathcal{F} [v] (\ldots,x_j,x_{j+1},\ldots) \sim (x_{j+1} - x_j)^{h_{1,d}-h_{1,d_j}-h_{1,d_{j+1}}} \mathcal{F} [\hat{v}] (\ldots,x_j,\ldots)}$
+
+</div>
+</script></section><section data-markdown><script type="text/template">
+### A quantum group zig-zag problem
+
+* $v_\omega \in M_3^{\otimes R} \otimes M_2 \otimes M_3^{\otimes L}$ such that:
+
+**PDE & COV:** 
+$v_\omega$ highest weight vec. of a 2-dim. subrep.
+
+$$ \big( \mathrm{id}^{\otimes \\#} \otimes \pi_2 \otimes \mathrm{id}^{\otimes \\#} \big) (v_\omega) \propto \begin{cases} v_{\hat{\omega}} & \text{first} \\\\ 0 & \text{else} \end{cases}$$
+
+$$ \big( \mathrm{id}^{\otimes \\#} \otimes (\pi_1 \oplus \pi_3) \otimes \mathrm{id}^{\otimes \\#} \big) (v_\omega) \propto \begin{cases} 0 \oplus v_{\hat{\omega}_j} & \text{consec.} \\\\ 0 \oplus 0 & \text{else} \end{cases}$$
+</script></section><section data-markdown><script type="text/template">
+### Solving the quantum group zig-zag problem
+
+
+<div id="thm">
+
+**"Theorem"** *(Jokela & Järvinen & K. [arXiv:1311.2297](https://arxiv.org/abs/1311.2297),
+K. & Peltola: [arXiv:1506.02476](https://arxiv.org/abs/1506.02476))*
+
+The quantum group zig-zag problem has a unique solution
+$$(v_\omega)_{\omega \in \bigsqcup_N \\{\pm\\}^N}$$
+up to an overall multiplicative constant.
+
+**"Corollary"** $Q_\omega = \mathcal{F}[v_\omega]$ solve the zig-zag PDE problem.
+</div>
+</script></section><section data-markdown><script type="text/template">
+### Conformal block formulation
+
+ * generic Virasoro VOA ($c=c(\kappa)$, $\kappa \notin \mathbb{Q}$)
+ * "first-row" subcat. of modules ($\oplus$ irreps $h_{1;d}(\kappa)$)
+
+
+<div id="thm">
+
+**"Theorem"** *(Koshida & K. [arXiv:2105.13839](https://arxiv.org/abs/2105.13839))*
+
+Compositions of intertwining operators in the first-row subcategory
+correspond linearly to $\mathrm{Ker}(E) \subset \bigotimes_i M_{d_i}$
+in such a way that their highest weight matrix elements are the
+functions $\mathcal{F}[\cdot]$ and OPEs (associativity) are given by
+submodule projections (6j-symbols).
+
+**"Corollary"** $Q_\omega = \mathcal{F}[v_\omega]$ are the zig-zag conformal blocks.
+
+</div>
+</script></section></section><section ><section data-markdown><script type="text/template">
+### Boundary zig-zags of lattice models
+
+![perco](sub/perco_expl_figure-1.png) <!-- .element height="50%" width="50%" -->
+
+critical percolation exploration path $ \longrightarrow \mathrm{SLE}_{\kappa=6}$
+</script></section><section data-markdown><script type="text/template">
+### Boundary zig-zags of lattice models
+
+![perco](sub/LERW_image-1.png) <!-- .element height="45%" width="45%" -->
+
+loop-erased random walk (LERW) $ \longrightarrow \mathrm{SLE}_{\kappa=2}$
+</script></section><section data-markdown><script type="text/template">
+### Boundary zig-zags of lattice models
+
+![perco](sub/FK_image-1.png) <!-- .element height="40%" width="40%" -->
+
+$Q$-Fortuin-Kasteleyn interface (FK) $ \overset{?}{\longrightarrow} \mathrm{SLE}_{\kappa=\kappa(Q)}$
+</script></section><section data-markdown><script type="text/template">
+### 1-visit plots
+
+$$ Q_+(x;y) \propto |y-x|^{-h_{1,3}(\kappa)} = |y-x|^{\frac{\kappa-8}{\kappa}} ?$$
+
+<div id="left">
+
+![one_pt_plots](sub/130711_N1_PERC_FK.png)
+
+ * percolation
+ * $Q=2$ and $Q=3$ FK
+
+</div>
+
+<div id="right">
+
+![one_pt_plot_lerw](sub/130711_N1_LERW.png)
+
+ * LERW
+
+</div>
+</script></section><section data-markdown><script type="text/template">
+### 2-visit plots
+
+$$ \tiny{ Q_{++}(x;y_1,y_2) \propto |y_1-x|^{\frac{\kappa-8}{\kappa}} |y_2-y_1|^{\frac{\kappa-8}{\kappa}} 
+  \\; {}_2 F_1 \big( \frac{4}{\kappa}, \frac{\kappa-8}{\kappa}; \frac{8}{\kappa}; \big| \frac{y_2-y_1}{y_2-x} \big| \big) } ?$$
+
+<div id="left">
+
+![two_pt_plots](sub/130712_N2_PERC_FK.png)
+
+ * percolation
+ * $Q=2$ and $Q=3$ FK
+
+</div>
+
+<div id="right">
+
+![two_pt_plot_lerw](sub/130712_N2_LERW.png)
+
+ * LERW
+
+</div>
+</script></section><section data-markdown><script type="text/template">
+### 3-visit plots
+
+<div id="left">
+
+![three_pt_plot_perco](sub/130814_N3_RFL.png)
+
+ * percolation
+
+</div>
+
+<div id="right">
+
+![three_pt_plot_FK](sub/131014_N3_RFR_FK.png)
+
+ * $Q=3$ FK-model
+
+</div>
+</script></section></section><section ><section data-markdown><script type="text/template">
+### LERW result
+
+<div id="thm">
+
+**"Theorem"** *(Karrila & K. & Peltola [arXiv:1702.03261](https://arxiv.org/abs/1702.03261))*
+
+For LERW boundary visits on horizontal/vertical boundaries of a simply connected
+domain approximated by square grid graphs of mesh $\delta$, the
+limits $\lim_{\delta \to 0} \delta^{-3 N} \mathbb{P}[N \text{ bdry visits}]$
+exist for all $N$ and all visit orders, and they solve the zig-zag PDE problem.
+
+($2 \times h_{1;2}$ PDE, $\hspace{.1cm} N \times h_{1;3}$ PDE + covariance + asymptotics)
+
+</div>
+</script></section><section data-markdown><script type="text/template">
+### Ideas of the LERW proof
+
+<div id="left">
+
+![LERW_UST](sub/UST-50x50-branch_from_bdry_point-W.png) <!-- .element height="50%" width="50%" -->
+
+![CIDT](sub/Dyck_tilings_CIDTa-11.png) <!-- .element height="50%" width="50%" -->
+
+</div>
+
+<div id="right">
+
+![LERW_bij1](sub/pics-UST_boundary_bijection-2.png) <!-- .element height="50%" width="50%" -->
+
+![LERW_bij2](sub/pics-UST_boundary_bijection-3.png) <!-- .element height="50%" width="50%" -->
+
+</div>
+
+$+$ fusion with BPZ PDEs
+</script></section></section><section  data-markdown><script type="text/template">
+### Happy birthday Denis! ![LERW_UST](sub/lean_tada.png) <!-- .element height="10%" width="10%" -->
+
+
+
+
+
+<style>
+#left {
+    margin: 10px 0 15px 20px;
+    text-align: left;
+    float: left;
+    z-index:-10;
+    width:48%;
+    font-size: 0.85em;
+    line-height: 1.5;
+}#right {
+    margin: 10px 0 15px 0;
+    float: right;
+    text-align: left;
+    z-index:-10;
+    width:48%;
+    font-size: 0.85em;
+    line-height: 1.5;
+}#thm {
+    margin: 10px 0 15px 20px;
+    text-align: left;
+    float: left;
+    z-index:-10;
+    width:100%;
+    font-size: 0.85em;
+    line-height: 1.5;
+}
+</style>
+
+</script></section></div>
+    </div>
+
+    <script src="./dist/reveal.js"></script>
+
+    <script src="./plugin/markdown/markdown.js"></script>
+    <script src="./plugin/highlight/highlight.js"></script>
+    <script src="./plugin/zoom/zoom.js"></script>
+    <script src="./plugin/notes/notes.js"></script>
+    <script src="./plugin/math/math.js"></script>
+    <script>
+      function extend() {
+        var target = {};
+        for (var i = 0; i < arguments.length; i++) {
+          var source = arguments[i];
+          for (var key in source) {
+            if (source.hasOwnProperty(key)) {
+              target[key] = source[key];
+            }
+          }
+        }
+        return target;
+      }
+
+      // default options to init reveal.js
+      var defaultOptions = {
+        controls: true,
+        progress: true,
+        history: true,
+        center: true,
+        transition: 'default', // none/fade/slide/convex/concave/zoom
+        plugins: [
+          RevealMarkdown,
+          RevealHighlight,
+          RevealZoom,
+          RevealNotes,
+          RevealMath
+        ]
+      };
+
+      // options from URL query string
+      var queryOptions = Reveal().getQueryHash() || {};
+
+      var options = extend(defaultOptions, {}, queryOptions);
+    </script>
+
+
+    <script>
+      Reveal.initialize(options);
+    </script>
+  </body>
+</html>
