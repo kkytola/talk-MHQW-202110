@@ -49,7 +49,6 @@ October 14, 2021
  * bdry-zig-zag $h_{1;3}(\kappa) = \frac{8-\kappa}{\kappa}$
 
 </div>
-
 </script></section><section data-markdown><script type="text/template">
 ### Denis' & Michel's $\mathrm{SLE}_\kappa$ boundary-zig-zag
 
@@ -76,78 +75,6 @@ transl. invariant + homogeneous (deg$=-N h_{1;3}$)
 $$ \lim_{y_1^\pm \to x} |y_1^\pm - x|^{\frac{8-\kappa}{\kappa}} Q_\omega \propto \begin{cases} Q_{\hat{\omega}} & \text{first} \\\\ 0 & \text{else} \end{cases}$$
 
 $$ \lim_{y_{j+1}^\pm \to y_j^\pm} |y_{j+1}^\pm - y_j^\pm|^{\frac{8-\kappa}{\kappa}} Q_\omega \propto \begin{cases} Q_{\hat{\omega}_j} & \text{consecutive} \\\\ 0 & \text{else} \end{cases}$$
-
-</script></section></section><section ><section data-markdown><script type="text/template">
-### Approach via a hidden quantum group
-
-$U_q(\mathfrak{sl}_2)$ and its irreps $M_d$ of dimension $d$
-
-![contours](sub/contours_for_SCCGC-1.png) <!-- .element height="75%" width="75%" -->
-
-$$ \tiny{\int \\! \cdot \\! \cdot \\! \cdot \\! \int \prod_{i \ne j} (x_j-x_i)^{\frac{2}{\kappa}(d_i-1)(d_j-1)} 
-    \prod_{i,r} (w_r-x_i)^{\frac{-4}{\kappa}(d_i-1)}
-    \prod_{r \ne s} (w_s-w_r)^{\frac{8}{\kappa}} \prod \mathrm{d} w_r} $$
-</script></section><section data-markdown><script type="text/template">
-### Approach via a hidden quantum group
-
-<div id="thm">
-
-**"Theorem"** *(K. & Peltola: [arXiv:1408.1384](https://arxiv.org/abs/1408.1384))*
-$q = e^{i 4 \pi / \kappa}$, $\kappa \notin \mathbb{Q}$
-
-$$\mathcal{F} \colon \bigotimes_{i=1}^n M_{d_i} \to \\{ \text{functions of } x_1, \ldots, x_n \\}$$
- * **COV:** $\mathcal{F}[v]$ is (i): translation inv., (ii) homog. if $K.v = q^{d} v$, (iii) ...
- * **PDE:** if $E.v = 0$, then $\mathcal{F}[v]$ satisfies BPZ PDEs of $h_{1;d_i}$
- * **ASY:** if $v \simeq \big( \mathrm{id}^{\otimes \\#} \otimes \pi_d \otimes \mathrm{id}^{\otimes \\#} \big) (v) = \hat{v}$
-     then $\small{\mathcal{F} [v] (\ldots,x_j,x_{j+1},\ldots) \sim (x_{j+1} - x_j)^{h_{1,d}-h_{1,d_j}-h_{1,d_{j+1}}} \mathcal{F} [\hat{v}] (\ldots,x_j,\ldots)}$
-
-</div>
-</script></section><section data-markdown><script type="text/template">
-### A quantum group zig-zag problem
-
-* $v_\omega \in M_3^{\otimes R} \otimes M_2 \otimes M_3^{\otimes L}$ such that:
-
-**PDE & COV:** 
-$v_\omega$ highest weight vec. of a 2-dim. subrep.
-
-$$ \big( \mathrm{id}^{\otimes \\#} \otimes \pi_2 \otimes \mathrm{id}^{\otimes \\#} \big) (v_\omega) \propto \begin{cases} v_{\hat{\omega}} & \text{first} \\\\ 0 & \text{else} \end{cases}$$
-
-$$ \big( \mathrm{id}^{\otimes \\#} \otimes (\pi_1 \oplus \pi_3) \otimes \mathrm{id}^{\otimes \\#} \big) (v_\omega) \propto \begin{cases} 0 \oplus v_{\hat{\omega}_j} & \text{consec.} \\\\ 0 \oplus 0 & \text{else} \end{cases}$$
-</script></section><section data-markdown><script type="text/template">
-### Solving the quantum group zig-zag problem
-
-
-<div id="thm">
-
-**"Theorem"** *(Jokela & Järvinen & K. [arXiv:1311.2297](https://arxiv.org/abs/1311.2297),
-K. & Peltola: [arXiv:1506.02476](https://arxiv.org/abs/1506.02476))*
-
-The quantum group zig-zag problem has a unique solution
-$$(v_\omega)_{\omega \in \bigsqcup_N \\{\pm\\}^N}$$
-up to an overall multiplicative constant.
-
-**"Corollary"** $Q_\omega = \mathcal{F}[v_\omega]$ solve the zig-zag PDE problem.
-</div>
-</script></section><section data-markdown><script type="text/template">
-### Conformal block formulation
-
- * generic Virasoro VOA ($c=c(\kappa)$, $\kappa \notin \mathbb{Q}$)
- * "first-row" subcat. of modules ($\oplus$ irreps $h_{1;d}(\kappa)$)
-
-
-<div id="thm">
-
-**"Theorem"** *(Koshida & K. [arXiv:2105.13839](https://arxiv.org/abs/2105.13839))*
-
-Compositions of intertwining operators in the first-row subcategory
-correspond linearly to $\mathrm{Ker}(E) \subset \bigotimes_i M_{d_i}$
-in such a way that their highest weight matrix elements are the
-functions $\mathcal{F}[\cdot]$ and OPEs (associativity) are given by
-submodule projections (6j-symbols).
-
-**"Corollary"** $Q_\omega = \mathcal{F}[v_\omega]$ are the zig-zag conformal blocks.
-
-</div>
 </script></section></section><section ><section data-markdown><script type="text/template">
 ### Boundary zig-zags of lattice models
 
@@ -262,6 +189,77 @@ exist for all $N$ and all visit orders, and they solve the zig-zag PDE problem.
 </div>
 
 $+$ fusion with BPZ PDEs
+</script></section></section><section ><section data-markdown><script type="text/template">
+### Approach via a hidden quantum group
+
+$U_q(\mathfrak{sl}_2)$ and its irreps $M_d$ of dimension $d$
+
+![contours](sub/contours_for_SCCGC-1.png) <!-- .element height="75%" width="75%" -->
+
+$$ \tiny{\int \\! \cdot \\! \cdot \\! \cdot \\! \int \prod_{i \ne j} (x_j-x_i)^{\frac{2}{\kappa}(d_i-1)(d_j-1)} 
+    \prod_{i,r} (w_r-x_i)^{\frac{-4}{\kappa}(d_i-1)}
+    \prod_{r \ne s} (w_s-w_r)^{\frac{8}{\kappa}} \prod \mathrm{d} w_r} $$
+</script></section><section data-markdown><script type="text/template">
+### Approach via a hidden quantum group
+
+<div id="thm">
+
+**"Theorem"** *(K. & Peltola: [arXiv:1408.1384](https://arxiv.org/abs/1408.1384))*
+$q = e^{i 4 \pi / \kappa}$, $\kappa \notin \mathbb{Q}$
+
+$$\mathcal{F} \colon \bigotimes_{i=1}^n M_{d_i} \to \\{ \text{functions of } x_1, \ldots, x_n \\}$$
+ * **COV:** $\mathcal{F}[v]$ is (i): translation inv., (ii) homog. if $K.v = q^{d} v$, (iii) ...
+ * **PDE:** if $E.v = 0$, then $\mathcal{F}[v]$ satisfies BPZ PDEs of $h_{1;d_i}$
+ * **ASY:** if $v \simeq \big( \mathrm{id}^{\otimes \\#} \otimes \pi_d \otimes \mathrm{id}^{\otimes \\#} \big) (v) = \hat{v}$
+     then $\small{\mathcal{F} [v] (\ldots,x_j,x_{j+1},\ldots) \sim (x_{j+1} - x_j)^{h_{1,d}-h_{1,d_j}-h_{1,d_{j+1}}} \mathcal{F} [\hat{v}] (\ldots,x_j,\ldots)}$
+
+</div>
+</script></section><section data-markdown><script type="text/template">
+### A quantum group zig-zag problem
+
+* $v_\omega \in M_3^{\otimes R} \otimes M_2 \otimes M_3^{\otimes L}$ such that:
+
+**PDE & COV:** 
+$v_\omega$ highest weight vec. of a 2-dim. subrep.
+
+$$ \big( \mathrm{id}^{\otimes \\#} \otimes \pi_2 \otimes \mathrm{id}^{\otimes \\#} \big) (v_\omega) \propto \begin{cases} v_{\hat{\omega}} & \text{first} \\\\ 0 & \text{else} \end{cases}$$
+
+$$ \big( \mathrm{id}^{\otimes \\#} \otimes (\pi_1 \oplus \pi_3) \otimes \mathrm{id}^{\otimes \\#} \big) (v_\omega) \propto \begin{cases} 0 \oplus v_{\hat{\omega}_j} & \text{consec.} \\\\ 0 \oplus 0 & \text{else} \end{cases}$$
+</script></section><section data-markdown><script type="text/template">
+### Solving the quantum group zig-zag problem
+
+
+<div id="thm">
+
+**"Theorem"** *(Jokela & Järvinen & K. [arXiv:1311.2297](https://arxiv.org/abs/1311.2297),
+K. & Peltola: [arXiv:1506.02476](https://arxiv.org/abs/1506.02476))*
+
+The quantum group zig-zag problem has a unique solution
+$$(v_\omega)_{\omega \in \bigsqcup_N \\{\pm\\}^N}$$
+up to an overall multiplicative constant.
+
+**"Corollary"** $Q_\omega = \mathcal{F}[v_\omega]$ solve the zig-zag PDE problem.
+</div>
+</script></section><section data-markdown><script type="text/template">
+### Conformal block formulation
+
+ * generic Virasoro VOA ($c=c(\kappa)$, $\kappa \notin \mathbb{Q}$)
+ * "first-row" subcat. of modules ($\oplus$ irreps $h_{1;d}(\kappa)$)
+
+
+<div id="thm">
+
+**"Theorem"** *(Koshida & K. [arXiv:2105.13839](https://arxiv.org/abs/2105.13839))*
+
+Compositions of intertwining operators in the first-row subcategory
+correspond linearly to $\mathrm{Ker}(E) \subset \bigotimes_i M_{d_i}$
+in such a way that their highest weight matrix elements are the
+functions $\mathcal{F}[\cdot]$ and OPEs (associativity) are given by
+submodule projections (6j-symbols).
+
+**"Corollary"** $Q_\omega = \mathcal{F}[v_\omega]$ are the zig-zag conformal blocks.
+
+</div>
 </script></section></section><section  data-markdown><script type="text/template">
 ### Happy birthday Denis! ![LERW_UST](sub/lean_tada.png) <!-- .element height="10%" width="10%" -->
 
